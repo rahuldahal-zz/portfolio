@@ -30,14 +30,7 @@
     }
   }
 }
-.toLeft {
-  position: absolute;
-  left: 0;
-}
-.toBottom {
-  position: absolute;
-  bottom: 0;
-}
+
 p {
   font-size: 1rem;
 }
@@ -46,7 +39,7 @@ p {
 .spanText {
   padding: 10px 15px;
   background: #eee;
-  border-radius: 20px;
+  border-radius: 1rem;
   color: #222;
 
   @include for_600 {
@@ -414,6 +407,7 @@ background-size: cover;
         width: 650px;
         transform: translateY(100px);
         opacity: 0;
+        border-radius: 0.5rem;
         transform-origin: right;
 
         @include for_768 {
@@ -466,6 +460,7 @@ background-size: cover;
           width: inherit;
           height: inherit;
           background-color: #fff;
+          border-radius: 0.5rem;
           box-shadow: -9px 9px 18px rgba(0, 0, 0, 0.4);
         }
       }
