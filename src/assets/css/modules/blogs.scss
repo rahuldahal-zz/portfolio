@@ -1,0 +1,150 @@
+@import "_media.scss";
+
+$primary-color: #2699fb;
+
+body {
+  position: relative;
+  background-color: #eee;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+nav {
+  background-color: #006699;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+}
+
+main {
+  margin-top: 10vh;
+  padding: 50px 40px 30px 40px;
+  min-height: 90vh;
+  position: relative;
+
+  @include for_600 {
+    padding: 0;
+    padding-bottom: 30px;
+  }
+}
+
+main #cards {
+  perspective: 500px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas: "pinned" "unpinned";
+  margin: 0 auto;
+  max-width: 1366px;
+
+  #pinnedContainer {
+    grid-area: pinned;
+  }
+  #unpinned {
+    grid-area: unpinned;
+  }
+
+  #pinnedContainer,
+  #unpinned {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 40px;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 40px;
+
+    .pinnedText {
+      width: max-content;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      color: #eee;
+      background-color: #333;
+      padding: 0.3em 0.5em;
+      transform: skewX(-16deg);
+
+      @include for_768 {
+        transform: skewX(0);
+      }
+    }
+  }
+}
+.card {
+  position: relative;
+  box-shadow: 15px 15px 29px #8d8c8c, -15px -15px 29px #eeeeee;
+  height: 450px;
+  width: 330px;
+  transition: transform 0.3s ease-in-out, filter 0.1s ease-in-out;
+  cursor: pointer;
+  border-radius: 1rem;
+
+  .card_img {
+    background-size: cover;
+    height: 200px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+  }
+  .card_texts {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 300px;
+    background-color: #006699;
+    color: #fff;
+    padding: 10px;
+    border-bottom-right-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.4);
+
+    h1 {
+      font-size: 24px;
+    }
+    .blog-category {
+      width: max-content;
+      background-color: #333;
+      color: #e4d022;
+      padding: 0.3em 0.5em;
+      border-radius: 0.75rem;
+    }
+    .date-created {
+      padding: 0.5em;
+    }
+  }
+  .readMore {
+    background-color: #e4d022;
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.6em 1em;
+    color: #333;
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover,
+    &:focus {
+      transform: translateY(-5px);
+      background-color: darken($color: #e4d022, $amount: 10);
+    }
+  }
+}
+
+#loadMore {
+  display: block;
+  background-color: #333;
+  color: #eee;
+  padding: 1em;
+  margin: 0 auto;
+}
+
+#card0,
+#card1,
+#card2 {
+  margin-top: 70px;
+}
+
+@include for_768 {
+  #card1,
+  #card2 {
+    margin-top: 0;
+  }
+}

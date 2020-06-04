@@ -1,0 +1,93 @@
+#loader {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    background: #fff;
+    width: 100vw;
+    height: 100vh;
+    transition: opacity 0.5s ease-out;
+  }
+  #loader_container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 250px;
+    transform: translate(-50%, -50%);
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: "logo" "logo" "logo" "logo" "h1_" "." "span_" "loading";
+  }
+  #logoContainer {
+    grid-area: logo;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95px;
+    width: 95px;
+    background: $primary-color;
+  }
+  #loaderLogo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    fill: #fff;
+  }
+  #loader_container > h1 {
+    grid-area: h1_;
+  }
+  #loader_container > span {
+    grid-area: span_;
+    position: relative;
+    width: 100%;
+    height: 20px;
+  }
+  #line::before {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: #e4d022;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform: translateX(100px);
+    animation: translateX 0.5s ease-in-out alternate infinite;
+  }
+  #line::after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 4px;
+    background: #006699;
+    border-radius: 4px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform-origin: right;
+    transform: translateX(-100px);
+    animation: translateX 0.5s 0.2s ease-in-out alternate infinite;
+  }
+  #loader_container > p {
+    grid-area: loading;
+  }
+  
+  @keyframes translateX {
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes slideOut {
+    100% {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+  }
+  

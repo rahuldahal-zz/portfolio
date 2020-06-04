@@ -1,0 +1,149 @@
+
+.formContainer {
+    small {
+      display: block;
+      color: #dddcdc;
+      margin-bottom: 20px;
+    }
+  
+    form {
+      width: 100%;
+      display: grid;
+      height: 250px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-areas: "email message" "name_ message" "number message" "submit message";
+      justify-content: center;
+      align-items: center;
+      grid-gap: 10px;
+  
+      @include for_768 {
+        margin-top: 20px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+      }
+      @include for_600 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-areas: "email" "name_" "number" "message" "submit";
+        grid-gap: 10px;
+      }
+  
+      fieldset {
+        text-align: left;
+        border: none;
+        outline: none;
+        position: relative;
+  
+        label {
+          display: block;
+          height: 22px;
+          width: max-content;
+          color: #eee;
+          transform: translate(8px, 31px);
+          transform-origin: left;
+          transition: transform 0.2s ease-in-out;
+          font-size: 1rem;
+          cursor: text;
+        }
+      }
+  
+      input {
+        display: block;
+        width: 95%;
+        outline: none;
+        padding-bottom: 5px;
+        border: none;
+        border-bottom: 2px solid #fff;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        padding: 8px;
+        background-color: rgba(185, 184, 184, 0.2);
+        font-size: 1rem;
+        font-family: montserrat, "sans-serif";
+        color: #fff;
+  
+        @include for_600 {
+          width: 90vw !important;
+        }
+  
+        // &:focus {
+        //   background: #006699;
+        //   color: #fff;
+        // }
+      }
+      .email {
+        grid-area: email;
+      }
+      .name {
+        grid-area: name_;
+      }
+      .number {
+        grid-area: number;
+      }
+      .message {
+        grid-area: message;
+        align-self: end;
+        display: inline-block;
+        font-family: "open sans", sans-serif;
+        width: 400px;
+        height: 248px;
+        max-height: 248px;
+        background-color: #ccc;
+        padding: 10px;
+        outline: none;
+        border: none;
+        border-radius: 10px;
+        border-bottom-right-radius: 0;
+  
+        @include for_600 {
+          width: 90vw !important;
+        }
+  
+        &:focus {
+          background: #eee;
+          color: #333;
+        }
+        &:focus ::placeholder {
+          color: #333;
+        }
+      }
+    }
+  }
+  
+  form {
+    button {
+      grid-area: submit;
+      margin-top: 20px;
+  
+      &:hover,
+      &:focus {
+        background: darken($color: #e4d022, $amount: 5);
+        transform: translateY(-5px);
+      }
+    }
+  }
+  
+  //form error class
+  
+  .errorAnim {
+    animation: error 0.5s ease-in-out;
+    border-bottom: 2px solid red !important;
+  }
+  
+  @keyframes error {
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(5px);
+    }
+  }
