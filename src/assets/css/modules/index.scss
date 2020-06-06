@@ -36,7 +36,7 @@ p {
 }
 
 
-.spanText {
+.tagline__spanText {
   padding: 10px 15px;
   background: #eee;
   border-radius: 1rem;
@@ -65,15 +65,15 @@ p {
   grid-area: arrow;
   font-size: 2.25rem;
   position: absolute;
-  left: 70%;
+  right: 20%;
   z-index: 1;
-  bottom: 30px;
-  transform: translate(-70%, -5px);
-  animation: updown70 0.5s ease-in-out infinite alternate;
+  bottom: 60px;
+  transform: translate(20%, -5px);
+  animation: updown20 0.5s ease-in-out infinite alternate;
 
   @include for_768 {
     position: absolute;
-    bottom: 15vh;
+    bottom: 17vh;
     left: 50% !important;
     transform: translateX(-50%);
     animation: updown50 0.5s ease-in-out infinite alternate;
@@ -89,11 +89,11 @@ p {
 }
 
 
-#contents_wrap {
+#indexHeader__contents_wrap {
   position: relative;
   z-index: 2;
   height: 100vh;
-  max-width: 1366px;
+  max-width: 1600px;
   margin: 0 auto;
 
   @include for_768 {

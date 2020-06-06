@@ -103,8 +103,6 @@ export function commonScripts() {
     //for navBar
 
     const nav = _.select("nav");
-
-    console.log(scrolled, lastScroll);
     if (scrolled < lastScroll) {
       nav.style.transform = "translateY(0)";
       nav.style.backgroundColor = "#006699";
@@ -137,7 +135,7 @@ export function commonScripts() {
 
       setTimeout(() => {
         window.location = url;
-      }, 600);
+      }, 400);
     });
   });
 

@@ -44,6 +44,11 @@ nav{
       background: url(./assets/images/aboutMe_avatar.jpg) center center no-repeat;
       background-size: cover;
       box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+
+      @include for_600{
+        width: 250px;
+        height: 250px;
+      }
     }
 
     .btn {
@@ -78,6 +83,10 @@ nav{
       margin-bottom: 40px;
       color: #fff;
       font-weight: 500;
+
+      @include for_768{
+        margin-top: 20px;
+      }
     }
 
     h3{
