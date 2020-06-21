@@ -1,0 +1,92 @@
+@import "media";
+
+nav {
+    position: sticky !important;
+    top: 0;
+    background-color: #006699;
+    box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.4);
+  }
+
+#resources{
+    padding: 2rem 0.5rem;
+    @include widerThan768{
+        padding: 3rem;
+    }
+
+    h1{
+        margin-bottom: 2rem;
+    }
+
+
+    .resource{
+        max-width: 400px;
+        display: flex;
+        flex-direction: column;
+
+        &__title{
+            padding: 1rem 0.75rem;
+            background-color: #e4d022;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 0;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+        }
+
+        &__description{
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0.75rem;
+            background-color: #333;
+            color: #eee;
+        }
+
+        &__usage{
+            display: flex;
+            flex-direction: column;
+           
+           
+            &__copyLink{
+                border-bottom-right-radius: 0.5rem;
+                border-bottom-right-radius: 0.5rem;
+                
+                strong{
+                    display: block;
+                    padding: 0.75rem;
+                    font-size: 0.9rem;
+                    background-color: #eee;
+                }
+
+                div{
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .cssLink{
+                    padding: 0.5rem 0.75rem;
+                    background-color: #ccc;
+                    overflow-x: scroll;
+
+                    span{
+                        display: inline-block;
+                        width: max-content;
+                        color: #555;
+                    }
+                }
+
+                button{
+                    background-color: #e4d022;
+                    padding: 10px;
+                    border-radius: 0;
+                    box-shadow: none;
+
+                    &:hover,
+                    &:focus {
+                      transform: translateY(0);
+                    }
+                }
+                
+            }
+        }
+    }
+}

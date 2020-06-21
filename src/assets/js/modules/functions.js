@@ -20,6 +20,19 @@ export class ReusableFunctions {
     }
   }
 
+  //copy to clipboard
+  copyToClipboard(textToBeCopied) {
+    let textarea = document.createElement("textarea");
+    textarea.value = textToBeCopied;
+    document.body.appendChild(textarea);
+    textarea.select();
+    if (document.execCommand("copy"))
+      this.notify("COPIED!", "animation-delay: 0s ; color: green;", 3000);
+    else
+      this.notify("Failed to copy", "animation-delay: 0s ; color: red;", 3000);
+    textarea.remove();
+  }
+
   //scroll listener
 
   listen_scroll(target) {

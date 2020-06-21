@@ -1,4 +1,4 @@
-import { ReusableFunctions } from "./functions"; //methods can be accessed from the prototype
+import { ReusableFunctions } from "./functions";
 import throttle from "lodash/throttle";
 const _ = new ReusableFunctions();
 
