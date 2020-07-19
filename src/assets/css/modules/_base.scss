@@ -162,8 +162,10 @@ body {
   overflow-x: hidden;
 }
 
+
 main {
   position: relative;
+  overflow-x: hidden;
   &::before {
     content: "";
     display: block;
